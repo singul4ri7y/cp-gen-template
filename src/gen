@@ -15,7 +15,7 @@ take config = include('config');
 
 take template_name = len($_ARGS) > 1 ? $_ARGS[1] : config.defaults.template,
      output_name   = len($_ARGS) > 2 ? $_ARGS[2] : config.defaults.output,
-	 username      = len($_ARGS) > 3 ? $_ARGS[3] : config.defaults.username,
+     username      = len($_ARGS) > 3 ? $_ARGS[3] : config.defaults.username,
      extension     = len($_ARGS) > 4 ? $_ARGS[4] : config.defaults.extension;
 
 template_name += '.' + extension;
