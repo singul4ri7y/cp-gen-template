@@ -1,0 +1,51 @@
+#!/usr/local/bin/promit
+
+/**
+ * gen (Promit file)
+ *
+ * This is a promit program to generate Competitive Programming
+ * templates in a cool way for contests.
+ *
+ * Created by SD Asif Hossein in 30th August, 2023 at 08:57 PM (UTC +06).
+ */
+
+// The configuration file
+
+take config = include('config');
+
+take template_name = len($_ARGS) > 1 ? $_ARGS[1] : config.defaults.template,
+     output_name   = len($_ARGS) > 2 ? $_ARGS[2] : config.defaults.output,
+	 username      = len($_ARGS) > 3 ? $_ARGS[3] : config.defaults.username,
+     extension     = len($_ARGS) > 4 ? $_ARGS[4] : config.defaults.extension;
+
+template_name += '.' + extension;
+output_name   += '.' + extension;
+
+take template_file = File(config.location + template_name, File::MODE_READ);
+
+if(!template_file.is_opened()) {
+	System::print_error("Could not open template file '$template_name'! Template location : ${config.location}");
+	System::exit(System::EXIT_FAILURE);
+}
+
+take output_file = File(output_name, File::MODE_WRITE);
+
+if(!output_file.is_opened()) {
+	System::print_error("Could not create output file '$output_name'! Abort.");
+	System::exit(System::EXIT_FAILURE);
+}
+
+output_file.write_line('/**
+ * $output_name
+ * 
+ * Author : $username
+ * Created at ${Time()}
+ */
+');
+
+output_file.write(template_file.read_all());
+
+// Now close the buffers.
+
+template_file.close();
+output_file.close();

@@ -1,0 +1,20 @@
+/** 
+ * config.promit
+ * 
+ * This is the configuration file to customize your template generation.
+ * 
+ * Created by SD Asif Hossein in 30th August, 2023 at 08:50 PM (UTC +06).
+ */
+
+# Change the configuration befitting you.
+
+return {
+    location(const) : '/your/absolute/location/to/template/folder/',    # Don't forget to add a slash (/) or backslash (Windows) at the end.
+
+    defaults(const) : {
+        username(const)  : 'singul4ri7y',    # Your cool username.
+        extension(const) : 'cpp',            # For C++ files, change it to your prefered extension (e.g. 'java' for Java, 'py' for Python).
+        template(const)  : 'default',        # Default template (defualt.$extension$).
+        output(const)    : 'solution'        # Default output filename (solution.$extension$).
+    }
+};
