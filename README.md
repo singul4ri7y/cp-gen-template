@@ -11,4 +11,8 @@ Go to `config.promit` and edit the configuration which befits you.
 
 Move the `gen` and `config.promit` files to `/usr/local/bin` (Linux/Unix/Darwin) or in `PATH` (Windows).
 
+<b>Usage</b>: `gen the_template output_file_name your_username preferred_extension`
+
+If you provide none of the arguments, the program will resort to the default ones defined in `config.promit`.
+
 Enjoy.
