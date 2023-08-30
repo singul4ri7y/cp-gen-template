@@ -15,4 +15,8 @@ Move the `gen` and `config.promit` files to `/usr/local/bin` (Linux/Unix/Darwin)
 
 If you provide none of the arguments, the program will resort to the default ones defined in `config.promit`.
 
+## How it works
+
+Your templates will be files inside of a folder you define as the template location in the config. When you generate a template, it will take the template name, find a file that has coherent/matching name (without extension) and copys the file content. Then it creates the output file and writes down author name, date when it was created etc. with the content of the template file. Simple.
+
 Enjoy.
